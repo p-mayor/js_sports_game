@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS Game Challenge</title>
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Hockey, JavaScript, and the DOM oh My!</h1>
+      <h2>...the game!</h2>
+      <div id='reset'>
+        <button id="reset">RESET</button><br />
+        NUMBER OF RESETS: <span id="num-resets">0</span>
+      </div>
+      <div class="clear"></div>
+      <div class="left">
+        <h2>
+          Team 1
+        </h2>
+        <div class="hits">
+          SHOTS TAKEN: <span id="teamone-numshots">0</span><br />
+          GOALS: <span id="teamone-numhits">0</span>
+        </div>
+        <div>
+          <button id="teamone-shoot">SHOOT</button>
+        </div>
+      </div>
+      <div class="right">
+        <h2>
+          Team 2
+        </h2>
+        <div class="hits">
+          SHOTS TAKEN: <span id="teamtwo-numshots">0</span><br />
+          GOALS: <span id="teamtwo-numhits">0</span>
+        </div>
+        <div>
+          <button id="teamtwo-shoot">SHOOT</button>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <script src="assets/javascript/game.js"></script>
+  </body>
+</html>
