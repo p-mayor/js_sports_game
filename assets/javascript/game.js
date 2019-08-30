@@ -1,8 +1,7 @@
 (function() {
   let resetCount = 0;
-  let oneHitCount = 0;
-  let twoHitCount = 0;
-
+  let oneGoalCount = 0;
+  let twoGoalCount = 0;
   let oneShotCount = 0;
   let twoShotCount = 0;
 
@@ -10,10 +9,10 @@
   let teamTwoShootButton = document.querySelector("#teamtwo-shoot");
 
   let teamOneShotCountElement = document.querySelector("#teamone-numshots");
-  let teamOneHitCountElement = document.querySelector("#teamone-numhits");
+  let teamOneGoalCountElement = document.querySelector("#teamone-numgoals");
 
   let teamTwoShotCountElement = document.querySelector("#teamtwo-numshots");
-  let teamTwoHitCountElement = document.querySelector("#teamtwo-numhits");
+  let teamTwoGoalCountElement = document.querySelector("#teamtwo-numgoals");
 
   let resetCountElement = document.querySelector("#num-resets");
 
@@ -24,32 +23,32 @@
   teamOneShootButton.addEventListener('click', function() {
     oneShotCount++;
     if (Math.random() > successChance) {
-      oneHitCount++;
+      oneGoalCount++;
     }
     teamOneShotCountElement.innerHTML = oneShotCount;
-    teamOneHitCountElement.innerHTML = oneHitCount;
+    teamOneGoalCountElement.innerHTML = oneGoalCount;
   });
 
   teamTwoShootButton.addEventListener('click', function() {
     twoShotCount++;
     if (Math.random() > 0.5) {
-      twoHitCount++;
+      twoGoalCount++;
     }
     teamTwoShotCountElement.innerHTML = twoShotCount;
-    teamTwoHitCountElement.innerHTML = twoHitCount;
+    teamTwoGoalCountElement.innerHTML = twoGoalCount;
   });
 
   resetButton.addEventListener('click', function() {
     resetCount++;
-    oneHitCount = 0;
-    twoHitCount = 0;
+    oneGoalCount = 0;
+    twoGoalCount = 0;
     oneShotCount = 0;
     twoShotCount = 0;
 
     teamOneShotCountElement.innerHTML = oneShotCount;
-    teamOneHitCountElement.innerHTML = oneHitCount;
+    teamOneGoalCountElement.innerHTML = oneGoalCount;
     teamTwoShotCountElement.innerHTML = twoShotCount;
-    teamTwoHitCountElement.innerHTML = twoHitCount;
+    teamTwoGoalCountElement.innerHTML = twoGoalCount;
     resetCountElement.innerHTML = resetCount;
   });
 })();
