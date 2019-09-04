@@ -1,4 +1,5 @@
 (function() {
+  let goalSound = new Audio('../assets/sounds/goal.mp3') 
   let resetCount = 0;
   
   let teamOneShotCount = 0;
@@ -26,6 +27,7 @@
     teamOneShotCount++;
     if (Math.random() > successChance) {
       teamOneGoalCount++;
+      goalSound.play()
     }
     teamOneShotCountElement.innerHTML = teamOneShotCount;
     teamOneGoalCountElement.innerHTML = teamOneGoalCount;
@@ -35,6 +37,7 @@
     teamTwoShotCount++;
     if (Math.random() > 0.5) {
       teamTwoGoalCount++;
+      goalSound.play()
     }
     teamTwoShotCountElement.innerHTML = teamTwoShotCount;
     teamTwoGoalCountElement.innerHTML = teamTwoGoalCount;
