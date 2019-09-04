@@ -35,7 +35,7 @@
 
   teamTwoShootButton.addEventListener('click', function() {
     teamTwoShotCount++;
-    if (Math.random() > 0.5) {
+    if (Math.random() > successChance) {
       teamTwoGoalCount++;
       goalSound.play()
     }
