@@ -1,5 +1,5 @@
 (function() {
-  let goalSound = new Audio('../assets/sounds/goal.mp3') 
+  let goalSound = new Audio('assets/sounds/goal.mp3') 
   let resetCount = 0;
   
   let teamOneShotCount = 0;
@@ -24,7 +24,7 @@
   let successChance = 0.5
 
   teamOneShootButton.addEventListener('click', function() {
-    teamOneShotCount++;
+    teamOneShotCount = teamOneShotCount + 1;
     if (Math.random() > successChance) {
       teamOneGoalCount++;
       goalSound.play()
@@ -34,7 +34,7 @@
   });
 
   teamTwoShootButton.addEventListener('click', function() {
-    teamTwoShotCount++;
+    teamTwoShotCount = teamTwoShotCount + 1;
     if (Math.random() > successChance) {
       teamTwoGoalCount++;
       goalSound.play()
@@ -44,7 +44,7 @@
   });
 
   resetButton.addEventListener('click', function() {
-    resetCount++;
+    resetCount = resetCount + 1;
     teamOneGoalCount = 0;
     teamTwoGoalCount = 0;
     teamOneShotCount = 0;
