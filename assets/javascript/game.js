@@ -1,12 +1,5 @@
 (function() {
   let goalSound = new Audio('assets/sounds/goal.mp3') 
-  let resetCount = 0;
-  
-  let teamOneShotCount = 0;
-  let teamOneGoalCount = 0;
-
-  let teamTwoShotCount = 0;
-  let teamTwoGoalCount = 0;
 
   let teamOneShootButton = document.querySelector("#teamone-shoot");
   let teamTwoShootButton = document.querySelector("#teamtwo-shoot");
@@ -24,36 +17,26 @@
   let successChance = 0.5
 
   teamOneShootButton.addEventListener('click', function() {
-    teamOneShotCount = teamOneShotCount + 1;
     if (Math.random() > successChance) {
-      teamOneGoalCount++;
+      teamOneGoalCountElement.innerHTML++;
       goalSound.play()
     }
-    teamOneShotCountElement.innerHTML = teamOneShotCount;
-    teamOneGoalCountElement.innerHTML = teamOneGoalCount;
+    teamOneShotCountElement.innerHTML++;
   });
 
   teamTwoShootButton.addEventListener('click', function() {
-    teamTwoShotCount = teamTwoShotCount + 1;
     if (Math.random() > successChance) {
-      teamTwoGoalCount++;
+      teamTwoGoalCountElement.innerHTML++;
       goalSound.play()
     }
-    teamTwoShotCountElement.innerHTML = teamTwoShotCount;
-    teamTwoGoalCountElement.innerHTML = teamTwoGoalCount;
+    teamTwoShotCountElement.innerHTML++;
   });
 
   resetButton.addEventListener('click', function() {
-    resetCount = resetCount + 1;
-    teamOneGoalCount = 0;
-    teamTwoGoalCount = 0;
-    teamOneShotCount = 0;
-    teamTwoShotCount = 0;
-
-    teamOneShotCountElement.innerHTML = teamOneShotCount;
-    teamOneGoalCountElement.innerHTML = teamOneGoalCount;
-    teamTwoShotCountElement.innerHTML = teamTwoShotCount;
-    teamTwoGoalCountElement.innerHTML = teamTwoGoalCount;
-    resetCountElement.innerHTML = resetCount;
+    teamOneShotCountElement.innerHTML = 0;
+    teamOneGoalCountElement.innerHTML = 0;
+    teamTwoShotCountElement.innerHTML = 0;
+    teamTwoGoalCountElement.innerHTML = 0;
+    resetCountElement.innerHTML++
   });
 })();
